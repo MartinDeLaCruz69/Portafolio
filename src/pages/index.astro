@@ -1,17 +1,46 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Skills from '../components/Skills.astro';
+import Footer from '../components/Footer.astro';
 
+const proyectos = [
+  {
+    title: "FLWR STORE",
+    description: "E-commerce Full Stack para tienda de K-pop. Autenticación, carrito y pagos en tiempo real.",
+    tags: ["Vue 3", "Firebase", "Tailwind CSS", "Vite"],
+    image: "/img/proyecto-flwr.jpg",
+    link: "https://github.com/TU-USUARIO/flwr-store",
+  },
+  {
+    title: "Catálogo de Escuelas IEA",
+    description: "Buscador interactivo con mapa Leaflet, paginación y filtros para el Instituto de Educación de Aguascalientes.",
+    tags: ["Vue 2", "Leaflet.js", "Axios", "Bootstrap"],
+    image: "/img/proyecto-iea.jpg",
+    link: "#",
+    wip: true,
+  },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Martín Esparza | Front-End Developer">
+  <Navbar />
+  <Hero />
+
+  <!-- Proyectos -->
+  <section id="proyectos" class="py-20 px-6 max-w-5xl mx-auto">
+    <h2 class="font-display font-bold text-3xl mb-12">
+      <span class="text-gray-600 mr-2">01.</span>Proyectos
+    </h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      {proyectos.map((p) => (
+        <ProjectCard {...p} />
+      ))}
+    </div>
+  </section>
+
+  <Skills />
+  <Footer />
+</Layout>
