@@ -1,0 +1,28 @@
+<section id="skills" class="py-20 px-6 max-w-5xl mx-auto">
+  <h2 class="font-display font-bold text-3xl mb-12">
+    <span class="text-gray-600 mr-2">02.</span>Tech Stack
+  </h2>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {[
+      { area: "Front-End",    items: ["Vue.js 2/3", "JavaScript ES6+", "HTML5 & CSS3", "Tailwind CSS", "Bootstrap", "Astro"] },
+      { area: "Back-End",     items: ["Node.js", "PHP", "Laravel", "REST APIs", "Java", "Python"] },
+      { area: "Bases de Datos", items: ["SQL Server", "Oracle", "MongoDB", "MySQL"] },
+      { area: "DevOps & Tools", items: ["Git / GitHub", "Postman", "Jenkins CI/CD", "Linux", "Azure"] },
+      { area: "Datos & BI",   items: ["Power BI", "Tableau", "Excel Avanzado", "KPIs & Métricas"] },
+      { area: "Diseño & UX",  items: ["Figma", "Adobe XD", "Leaflet.js", "UI/UX Principles"] },
+    ].map(({ area, items }) => (
+      <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-5 space-y-3">
+        <h3 class="font-display font-semibold text-sm tracking-wide uppercase" style="color: var(--accent)">{area}</h3>
+        <ul class="space-y-1.5">
+          {items.map(item => (
+            <li class="flex items-center gap-2 text-sm text-gray-400">
+              <span class="w-1 h-1 rounded-full shrink-0" style="background: var(--accent)"></span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>
